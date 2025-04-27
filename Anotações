@@ -1,0 +1,21 @@
+GIT ->   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  
+
+
+
+Configuração rápida — se você já fez esse tipo de coisa antes
+ou	
+https://github.com/PatyArcanjo/pgats.git
+Comece criando um novo arquivo ou enviando um arquivo existente . Recomendamos que cada repositório inclua um README , uma LICENSE e um .gitignore .
+
+…ou crie um novo repositório na linha de comando
+echo "# pgats" >> README.md 
+git init 
+git add README.md 
+git commit -m "primeiro commit" 
+git branch -M main 
+git remote add origin https://github.com/PatyArcanjo/pgats.git
+ git push -u origin main
+…ou envie um repositório existente a partir da linha de comando
+git remoto adicionar origem https://github.com/PatyArcanjo/pgats.git
+ git branch -M principal 
+git push -u origem principal
