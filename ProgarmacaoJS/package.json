@@ -1,0 +1,16 @@
+{
+  "name": "progarmacaojs",
+  "version": "1.0.0",
+  "main": "01-exercicio.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "mocha": "^11.2.2"
+  }
+}

@@ -19,3 +19,11 @@ git remote add origin https://github.com/PatyArcanjo/pgats.git
 git remoto adicionar origem https://github.com/PatyArcanjo/pgats.git
  git branch -M principal 
 git push -u origem principal
+
+
+ npm init -y
+
+ inicializacao o projeto e nmp e permite o uso de biblioteca 
+
+
+ gitignore -> arquivo que lista as pastas e arquivos que serão ignorados para ser enviados para o git

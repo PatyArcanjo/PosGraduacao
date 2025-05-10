@@ -10,6 +10,10 @@ const exibirNomeDoDog = (nome)  => {
     console.log(nome)
 }
 
+const saudacoes = (nome) => `Olá, ${nome}!`
+console.log(saudacoes('Teste2'))
+
+
 const obterNomeDoDogFormatado  = (nome) => { 
     return nome.toUpperCase()  // ultima linha a ser executada na funcao
 }
