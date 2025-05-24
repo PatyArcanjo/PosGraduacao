@@ -19,6 +19,9 @@ resultado
 
   import assert from 'node:assert'
 
+  bibioteca de asserao - CHAI
+  
+
 
 */
 import {exibirNome} from '../Testes/testes-de-unidade.js'
