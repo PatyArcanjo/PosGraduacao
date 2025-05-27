@@ -15,21 +15,7 @@ function verificarSePodeSerAdotado (idade,porte){
         return adocao = false
     }
 }
-
-// function calcularConsumoDeRacao(nomePet , idade, peso) {
-//     const nomePetFormatado = nomePet.charAt(0).toUpperCase() + nomePet.slice(1).toLowerCase();
-//     let racaoPorPeso = 0
-
-//     if (nomePetFormatado == 'Pitoco' && peso == 1) {
-//       racaoPorPeso = peso * 300
-//       return racaoPorPeso;
-//     } else if (nomePetFormatado == 'Pitoco' && idade > 1) {
-//       racaoPorPeso = (peso * 300) * 2
-//       return racaoPorPeso;
-//     }
-//   }
-  
-
+//Retorna a quantidade de ração diária do Pet
 function calcularConsumoDeRacao(nomePet , idade, peso) {
   let racaoPorPeso = 0
 
@@ -41,7 +27,7 @@ function calcularConsumoDeRacao(nomePet , idade, peso) {
     return racaoPorPeso;
   }
 }
-
+//Retorna o tipo de atividade do Pet de acordo com seu porte
 function decidirTipoDeAtividadePorPorte (porte) {
     switch (true) {
       case  porte == "pequeno" :
@@ -55,23 +41,7 @@ function decidirTipoDeAtividadePorPorte (porte) {
         break 
     }
 }
-
-// async function buscarDadoAsync (){
-//   const numeroAleatorio = [1, 2, 3, 4];
-  
-//   for (const numero of numeroAleatorio) {
-//       if (numero === 1) {
-//           return "Pipoca";
-//       } else if (numero === 2) {
-//           return "Paçoca";
-//       } else if (numero === 3) {
-//           return "Chiclete";
-//       } else if (numero === 4) {
-//         return "Pantera";
-//       }
-//   }
-// }
-
+//retonar a palavra Pipoca quando o valor sorteado aleatoriamente for 5
 async function buscarDadoAsync (){
     let numeroAleatorio = 0
  
@@ -82,7 +52,7 @@ async function buscarDadoAsync (){
         }
     }
 }
-
+// exporta as funções
 export {
     geradorDeTagsDeIdentificacao,
     verificarSePodeSerAdotado,
