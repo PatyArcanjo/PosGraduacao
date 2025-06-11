@@ -1,0 +1,42 @@
+# CI de Nível 01 - Disparo Manual Trabalho Final
+
+# nome do nosso 'pipeline'
+name: 'Execução Manual'
+
+# regras de disparo (gatilhos) ou tiggers
+# gatilho de execução manual  =  workflow_dispatch
+
+on:
+  workflow_dispatch:
+
+# trabalhos/tarefas que serão executadas dentro do pipeline = jobs
+
+jobs:
+  e2e-tests:
+    #maquina que o job irá executar
+    runs-on: ubuntu-latest
+
+    #passos do scritp de build
+    steps:
+      # clone do projeto
+      - uses: actions/checkout@v4
+
+      #instalacao do node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      #instalaçao do mocha 
+      - name: Instalando Mocha
+        run: npm install -g mocha
+
+      #executando trabalho final
+      - name: Executando Trabalho Final
+        run: npx mocha ./Testes/trabalho-final.js
+
+      #executando teste de unidade
+      - name: Executando Teste Unidade
+        run: npx mocha ./Testes/testes-de-unidade.js
+
+
+
