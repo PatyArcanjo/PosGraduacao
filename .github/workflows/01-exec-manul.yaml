@@ -54,12 +54,21 @@ jobs:
 
   validation:
     runs-on: ubuntu-latest
-    needs: [configuration, tests] #mostra msg de sucesso 
-    if: ${{ success() }}
+    needs: [configuration, tests] #mostra msg de sucesso no discord
+  
     steps:
       - name: Exibir Mensagem de Sucesso
+        if: ${{ success() }}
         run: |
          curl -H "Content-Type: application/json" \
           -X POST \
-          -d '{"content":"✅ Jobs de configuração e testes foram executados com sucesso!"}' \
+          -d '{"content":" 🎉 Jobs de configuração e testes foram executados com sucesso!"}' \
+          ${{ env.WEBHOOK_DISCORD_URL }}
+
+      - name: Exibir Mensagem de Falha
+        if: ${{ !success() }}
+        run: |
+         curl -H "Content-Type: application/json" \
+          -X POST \
+          -d '{"content":" 😢 Ocorreu alguma falha na excução dos jobs!"}' \
           ${{ env.WEBHOOK_DISCORD_URL }}
