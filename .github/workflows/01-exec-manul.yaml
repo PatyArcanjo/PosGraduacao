@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 env:
-  WEBHOOK_URL: 'https://discord.com/api/webhooks/1383199163897872626/ZSkdy7dVpTfJqyDP24hR20dOGZapdREVaOufoUR70QSDB0UXXH0ocQQaiUQjfmvbCb2E'  # webhook discord
+  WEBHOOK_DISCORD_URL: 'https://discord.com/api/webhooks/1383199163897872626/ZSkdy7dVpTfJqyDP24hR20dOGZapdREVaOufoUR70QSDB0UXXH0ocQQaiUQjfmvbCb2E'  # webhook discord
 
 # trabalhos/tarefas que serão executadas dentro do pipeline = jobs
 
@@ -58,4 +58,8 @@ jobs:
     if: ${{ success() }}
     steps:
       - name: Exibir Mensagem de Sucesso
-        run: echo "✅ Jobs de configuração e testes executados com sucesso!"
+        run: |
+         curl -H "Content-Type: application/json" \
+          -X POST \
+          -d '{"content":"✅ Jobs de configuração e testes foram executados com sucesso!"}' \
+          ${{ env.WEBHOOK_DISCORD_URL }}
