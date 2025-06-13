@@ -55,7 +55,8 @@ jobs:
   validation:
     runs-on: ubuntu-latest
     needs: [configuration, tests] #mostra msg de sucesso no discord
-  
+    if: ${{ always() }} 
+     
     steps:
       - name: Exibir Mensagem de Sucesso
         if: ${{ success() }}
