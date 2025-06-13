@@ -9,13 +9,16 @@ name: 'Execução Manual'
 on:
   workflow_dispatch:
 
+env:
+  WEBHOOK_URL: 'https://discord.com/api/webhooks/1383199163897872626/ZSkdy7dVpTfJqyDP24hR20dOGZapdREVaOufoUR70QSDB0UXXH0ocQQaiUQjfmvbCb2E'  # webhook discord
+
 # trabalhos/tarefas que serão executadas dentro do pipeline = jobs
 
 jobs:
-  e2e-tests:
+  configuration:
     #maquina que o job irá executar
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-latest    
+      
     #passos do scritp de build
     steps:
       # clone do projeto
@@ -29,6 +32,15 @@ jobs:
       #instalaçao do mocha 
       - name: Instalando Mocha
         run: npm install -g mocha
+
+  tests:
+    runs-on: ubuntu-latest
+    needs: [configuration] #será executado após os testes de inspecao
+    if: ${{ success() }} ; then echo "message=✅ Configuration job executados com sucesso!" 
+
+    steps:
+      # clone do projeto
+      - uses: actions/checkout@v4
 
       #executando trabalho final
       - name: Executando Trabalho Final
